@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Heaps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        function removeFromMinHeap(heap){
+            if (heap.length=2){
+                var temp = heap[heap.length-1]
+                heap.pop();
+                return temp;
+            }
+            else{
+                temp = heap[heap.length-1];
+                heap[heap.length-1] = heap[1];
+                heap[1] = temp;
+                heap.pop();
+                console.log(heap);
+                for(var i = 1; i<heap.length; i++){
+                    if(heap[i]>heap[i*2]){
+                        if(heap[i*2]>heap[i*2+1]){
+                            temp1 = heap[i];
+                            heap[i]=heap[i*2+1];
+                            heap[i*2+1] = temp1;
+                            console.log(heap);
+                        }
+                        else{
+                            temp1 = heap[i];
+                            heap[i] = heap[i*2];
+                            heap[i*2] = temp1;
+                            console.log(heap);
+                        }
+                    }
+                    else{
+                        console.log(heap);
+                        return temp;
+                    }                
+                }
+            }
+        }
+    </script>
+</body>
+</html>
