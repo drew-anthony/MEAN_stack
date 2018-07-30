@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Heaps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        function insertIntoHeap(heap, val){
+            var temp = 0;
+            if (heap.length<1){
+                heap[0] = undefined;
+                heap[1] = val;
+                return heap;
+            }
+            if(val>heap[heap.length/2]){
+                heap.push(val)
+                return heap;
+            }
+            while(val<heap[heap.length/2]){
+                temp = heap[heap.length/2];
+                heap[heap.length/2] = val;
+                heap[heap.length] = temp;
+                return heap;
+            }
+        }
+    </script>
+</body>
+</html>
