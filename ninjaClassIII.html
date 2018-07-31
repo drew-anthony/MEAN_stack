@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ninja III</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        class Ninja{
+            constructor(name){
+                this.Name = name;
+                this.Health = 100;
+                this.Speed = 3;
+                this.Strength = 3;
+            }
+            sayName(){
+                console.log(`${this.Name}`);              
+            }
+            showStats(){
+                console.log(`Name: ${this.Name}, Health: ${this.Health}, Speed: ${this.Speed}, Strength: ${this.Strength}`);
+            }
+            drinkSake(){
+                this.Health += 10;
+            }
+        }
+        class Sensei extends Ninja{
+            constructor(name){
+                super(name);
+                this.Wisdom = 10;
+                this.Health = 200;
+                this.Speed = 10;
+                this.Strength = 10;
+            }
+            speakWisdom(){
+                super.drinkSake();
+                console.log(`Hard work beats talent when talent doesn't work hard`)
+            }
+        }
+    </script>
+</body>
+</html>
