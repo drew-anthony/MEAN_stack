@@ -12,23 +12,33 @@
 
 
     <script>
-        class Ninja{
-            constructor(name){
-                NinjaName = name;
-                ninjaHealth = 100;
+            function Ninja(name){
+                this.Name = name;
+                this.Health = 100;
                 this.speed = 3;
                 this.strength = 3;
+            
+            Ninja.prototype.sayName = function(){
+                console.log("My ninja name is" + this.Name)
             }
-            sayName(){
-                console.log("My ninja name is" + NinjaName)
+            this.showStats = function(){
+                console.log("Name:"+this.Name, "Health:"+this.Health, "Speed:"+this.speed, "Strength:"+this.strength)
             }
-            showStats(){
-                console.log("Name:"+NinjaName, "Health:"+ninjaHealth, "Speed:"+this.speed, "Strength:"+this.strength)
-            }
-            drinkSake(){
+            this.drinkSake = function(){
 
             }
-        }    
+            this.punch = function(victim){
+                if(victim instanceof Ninja){
+                victim.Health -=5;
+                
+                }
+            }
+            this.kick = function(victim){
+                if(victim instanceof Ninja){
+                victim.Health -=(15*this.strength);
+                }
+            }
+        }
     </script>
 </body>
 </html>
