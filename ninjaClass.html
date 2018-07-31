@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ninja I</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+
+
+
+    <script>
+            function Ninja(name){
+                this.Name = name;
+                this.Health = 100;
+                this.speed = 3;
+                this.strength = 3;
+            
+            Ninja.prototype.sayName = function(){
+                console.log("My ninja name is" + this.Name)
+            }
+            this.showStats = function(){
+                console.log("Name:"+this.Name, "Health:"+this.Health, "Speed:"+this.speed, "Strength:"+this.strength)
+            }
+            this.drinkSake = function(){
+
+            }
+            this.punch = function(victim){
+                if(victim instanceof Ninja){
+                victim.Health -=5;
+                
+                }
+            }
+            this.kick = function(victim){
+                if(victim instanceof Ninja){
+                victim.Health -=(15*this.strength);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
