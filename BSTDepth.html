@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        var maxDepth = function(root) {
+        var depth = [{ node: root, depth: 1 }];
+        var current = depth.pop();
+        var max = 0;
+        while (current && current.node) {
+            var node = current.node;
+            if (node.left) {
+                depth.push({node: node.left, depth: current.depth + 1});
+            }
+            if (node.right) {
+                depth.push({node: node.right, depth: current.depth + 1});
+            }
+            if (current.depth > max) {
+                max = current.depth;
+            }
+            current = depth.pop();
+            }
+            return max;
+        }
+    </script>
+</body>
+</html>
