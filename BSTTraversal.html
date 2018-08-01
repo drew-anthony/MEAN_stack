@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        function BinarySearchTree(){
+            this.root = null;
+        }
+        BinarySearchTree.prototype.inOrderTraversal = function(root){
+            if(root.left){
+                this.inOrderTraversal(root.left);
+            }
+            console.log(root.value)
+            if(root.right){
+                this.inOrderTraversal(root.right);
+            }
+        }
+        function BinarySearchTree(){
+            this.root = null;
+        }
+        BinarySearchTree.prototype.preOrderTraversal = function(root){
+            console.log(root.value);
+            if (root.left){
+            this.preOrderTraversal(root.left);
+            } 
+            if (root.right){
+            this.preOrderTraversal(root.right);
+            }
+        }
+        function BinarySearchTree(){
+            this.root = null;
+        }
+        BinarySearchTree.prototype.postOrderTraversal = function(root){
+            if(root.left){
+                this.postOrdertraversal(root.left);
+            }
+            if(root.right){
+                this.postOrdertraversal(root.right);
+            }
+            console.log(root.value)
+        }
+    </script>
+</body>
+</html>
