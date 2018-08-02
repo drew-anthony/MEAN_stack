@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ghost</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron">
+        <% for (var x in users) { %>
+        <h1 class="display-4">Name: <%=Direcats[0].name%></h1>
+        <p class="lead">Info on <%=Direcats[0].name%></p>
+        <hr class="my-4">
+        <p>Favorite Food: <%=Direcats[0].food%></p>
+        <p>Age: <%=Direcats[0].age%></p>
+        <p>Sleeping spots: <%=Direcats[0].sleepSpots%></p>  
+        <% } %>      
+      </div>
+</body>
+</html>
