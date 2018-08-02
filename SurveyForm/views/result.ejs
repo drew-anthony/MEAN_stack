@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div class="card text-center">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Submitted Information: </h5>
+            <p class="card-text">Name: <%= user.name%> </p>
+            <p class="card-text">Location: <%= user.location%> </p>
+            <p class="card-text">Language: <%= user.language%> </p>
+            <p class="card-text">Comment: <%= user.comment%></p>
+            <a href="/" class="btn btn-info">Home</a>
+        </div>
+        <div class="card-footer text-muted">
+            Just Now
+        </div>
+    </div>
+</body>
+</html>
