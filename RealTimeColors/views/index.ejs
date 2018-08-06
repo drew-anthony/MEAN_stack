@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Epic Button Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+    $(document). ready(() => {
+   let socket = io.connect();
+
+   // Handles server request from each FORM
+   $('#greenForm').submit((_event) => {
+      _event.preventDefault();
+      socket.emit('color_pressed', 'green');
+   });
+   $('#blueForm').submit((_event) => {
+      _event.preventDefault();
+      socket.emit('color_pressed', 'blue');
+   });
+   $('#pinkForm').submit((_event) => {
+      _event.preventDefault();
+      socket.emit('color_pressed', 'pink');
+   });
+
+   // handles server responses to each FORM's request
+   socket.on('background_color', (background) => {
+      $('.jumbotron').css({'background-color': background.color, 'background-image': 'none'});
+   });
+})
+    </script>
+</head>
+<body>
+    <div style="text-align:center; color:black;">
+        <div class="container">
+           <div class="row justify-content-md-center inliner">
+              <div class="col">
+                 <form id="greenForm">
+                    <input type="submit" class="btn btn-lg color-btn" value="Green">
+                 </form>
+              </div>
+              <div class="col inliner-right">
+                 <form id="blueForm">
+                     <input type="submit" class="btn color-btn" value="Blue">
+                 </form>
+              </div>
+              <div class="col inliner-right">
+                 <form id="pinkForm">
+                     <input type="submit" class="btn color-btn" value="Pink">
+                 </form>
+              </div>
+           </div>
+        </div>
+     </div>
+</body>
+</html>
