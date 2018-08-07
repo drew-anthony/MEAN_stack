@@ -22,6 +22,7 @@ module.exports = {
         })
     },
     creator: (req, res) => {
+        console.log('success')
         res.render('create')
     },
     delete: (req, res) => {
@@ -48,7 +49,7 @@ module.exports = {
             res.redirect('/');
                 })
             },
-    id: (req, res) =>{
+    info: (req, res) =>{
         Quarterback.findOne({_id: req.params.id}, (err, qbsFromDB)=>{
             res.render('info', {qbs:qbsFromDB});
         })       

@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <style type ="text/css">
-    </style>
+    <script type ="text/javascript">
+    </script>
 </head>
 <body>
         <div class="jumbotron">
-                <img class="card-img-top" name="pic" src="<%= qbs.pic%>" alt="Card image cap">
+                <img class="card-img-top" name="pic" src=<%= qbs.pic%> alt="Card image cap">
                 <h1 class="display-4"><%= qbs.name%></h1>
                 <h1 class="display-4">#<%= qbs.number%></h1>
                 <p class="lead"><%= qbs.info%></p>
                 <hr class="my-4">
                 <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
-        </div>
+            </div>
 </body>
 </html>
