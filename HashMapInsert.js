@@ -27,19 +27,25 @@ var idx = mod(hashedKey, hashMap.length);
 
 function HashMapInsert(hashMap, key, value){
     hashedKey = key.hashCode()
-    console.log(hashMap)
-    console.log(hashedKey)
     hashed = hashedKey.length%hashMap.length;
   
   if(hashMap[hashed] === undefined){
     hashMap[hashed] = [];
   }
-    console.log(hashedKey.length)
-    console.log(hashMap)
-    
-    
+  var exists;
+  for(i=0; i<hashMap[hashed].length;i++){
+    if(hashMap[hashed][i][0] == key){
+      hashMap[hashed][i][1] = value;
+      exists = true;
+    }
+    else{
+      exists = false;
+    }
+  }
+  if(!exists){
     hashMap[hashed].push([key, value]);
- }
+  }
+}
 
 
 
