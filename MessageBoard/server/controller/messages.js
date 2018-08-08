@@ -1,14 +1,12 @@
 const mongoose = require('mongoose');
 const Message = mongoose.model("Message");
+const Comment = mongoose.model('Comment');
+
 
 module.exports = {
     index: (req, res) => {
         Message.find({}, (err, messagesFromDB)=>{
-        res.render("index",{messages:messagesFromDB})
-        console.log('1');
-        })
-        Comment.find({}, (err, commentsFromDB)=>{
-        res.render("index",{comments:commentsFromDB})
+        res.render("index",{posts:messagesFromDB})
         console.log('1');
         })
     },
@@ -31,7 +29,17 @@ module.exports = {
             if(err){
                 console.log(err);
             }
+            else{
+                Message.findOneAndUpdate({_id: req.params.id}, {$push: {comments: comment}}, function(err, comment){
+                    if(err){
+                        console.log('success')
+                    }
+                    else{
+                        console.log('fail')
+                    }
+                })
+            }
             res.redirect('/');
         })
-    },   
+    },
 }

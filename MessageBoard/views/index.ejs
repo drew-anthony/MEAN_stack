@@ -36,11 +36,19 @@
     
 </form>
 </body>
-<% for (var x in messages) { %>
+<% for (var x in posts) { %>
         <div class="jumbotron bg-warning" text-color="white">            
-            <h3>"<%= messages[x].message%>"</h3>
-            <p> - <%= messages[x].name%></p>
-            <form method="POST" action="">
+            <h3>"<%= posts[x].message%>"</h3>
+            <p> - <%= posts[x].name%></p>
+            <% for (var i of posts[x].comments) { %>
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header"><%= i.name%></div>
+                    <div class="card-body">
+                      <p class="card-text"><%= i.comment%></p>
+                </div>
+            </div>
+            <% } %>
+            <form method="POST" action="/messages/comments/<%= posts[x]._id%>">
             <div class="input-group input-group-lg">
                 <div class="input-group-append">
                     <span class="input-group-text" id="inputGroup-sizing-lg">Name:</span>
@@ -51,7 +59,7 @@
                 <div class="input-group-append">
                     <span class="input-group-text">Comment:</span>
                 </div>
-                <textarea class="form-control" name="message" aria-label="With textarea"></textarea>
+                <textarea class="form-control" name="comment" aria-label="With textarea"></textarea>
             </div>        
             <hr class="my-4">
             <button class="btn btn-dark btn-lg" type="submit" role="button">Post Comment</button>
