@@ -1,0 +1,12 @@
+<div class="root">  <!-- tip: use css to place a border around your different components to better visualize them -->
+  <h1>Welcome to {{ title }}!</h1>     <!-- use the selector of the task component to nest it within the root component -->
+</div>
+<h1>Restful Tasks API</h1>
+<button (click)="tasksOnClick()">Get all tasks</button>
+<div *ngFor="let x of tasks">
+    <p>{{x.title}}</p>
+    <button (click)="taskToShow(x)">Show</button>
+</div> 
+<app-task *ngIf="taskToShow" [showTask]="taskToShow"></app-task> 
+
+
