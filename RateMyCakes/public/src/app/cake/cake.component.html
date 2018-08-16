@@ -1,0 +1,16 @@
+<div class="container">
+  <div>
+    <div>
+        Average Rating: {{avg}}
+      <h2>{{getCake.title}}</h2>
+      <img src="{{getCake.description}}" alt="image" width="20%" height="75%">
+    </div>
+    
+    <div>        
+      <div *ngFor="let x of getCake.comments"> 
+      <h2></h2>     
+      <h2>{{x.comment}}</h2>
+    </div>
+    </div>
+  </div>
+</div>
