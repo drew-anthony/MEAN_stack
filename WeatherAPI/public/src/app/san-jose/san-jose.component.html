@@ -1,0 +1,7 @@
+<div class="container">
+    <p>Humidity: {{currentWX['list'][0].main.humidity}}</p>
+    <p>Average Temp: {{currentWX['list'][0].main.temp_max + currentWX['list'][0].main.temp_min / 2}} degrees</p>
+    <p>High: {{currentWX['list'][0].main.temp_max}} degrees</p>
+    <p>Low: {{currentWX['list'][0].main.temp_min}} degrees</p>
+    <p>Status: {{currentWX['list'][0].weather[0].description}}</p>
+  </div>
