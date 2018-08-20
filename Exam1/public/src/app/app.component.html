@@ -1,0 +1,28 @@
+<div style="text-align:center">
+    <h1>
+      {{head}}
+    </h1>
+  </div>
+  <div class="container">
+    <button [routerLink]="['/new']">New Restaurant</button>
+    <div class="row">
+      <table class="table">
+          <thead class="thead-secondary">
+            <tr>
+              <th scope="col">Restaurant</th>
+              <th scope="col">Cuisine</th>
+              <th scope="col">Actions Available</th>
+            </tr>
+          </thead>          
+            <tbody>
+              <tr>
+                <td>{{Restaurant.title}}</td>
+                <td>{{Restaurant.description}}</td>
+                <td><button [routerLink]="['/:id']">Read Reviews</button><button [routerLink]="['/:id/edit']">Update</button><button (click)="deleteRestaurant(x._id)">Delete</button></td>
+              </tr>
+            </tbody>          
+        </table>
+        </div>
+        </div>
+      <router-outlet></router-outlet> 
+      

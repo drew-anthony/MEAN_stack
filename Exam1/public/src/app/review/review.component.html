@@ -1,0 +1,22 @@
+<div class="container">
+    <button [routerLink]="['/:id/review']">New Review</button>
+    <div class="row">
+        <table class="table">
+            <thead class="thead-secondary">
+              <tr>
+                <th scope="col">Customer</th>
+                <th scope="col">Stars</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>          
+              <tbody>
+                <tr>
+                  <td>{{x.customer}}</td>
+                  <td>{{x.rate}}</td>
+                  <td>{{x.comment}}</td>
+                </tr>
+              </tbody>          
+        </table>
+    </div>
+  </div>
+<router-outlet></router-outlet> 
