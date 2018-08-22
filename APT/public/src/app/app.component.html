@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ head }}
+  </h1>
+</div>
+
+<div class="container">
+    <button [routerLink]="['/new']">New resturant</button>
+    <hr>
+    <div class="resturants">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

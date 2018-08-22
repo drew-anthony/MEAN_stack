@@ -1,0 +1,24 @@
+<div class="container">
+      <div class="col-8 border border-dark">
+          <h5>Register a resturant</h5>
+          <hr>
+          <form action="" (submit)="addResturant()">
+          <table>
+            <tr>
+              <td>Resturant Name:</td>
+              <td><input type="text" required minlength="3" maxlength="30" name="createResturant.name" [(ngModel)]="createResturant.name" #name="ngModel"></td>
+              <p *ngIf="name.errors"> Please enter a resturant name</p>
+            </tr>
+            <tr>
+              <td>Cuisine:</td>
+              <td><input type="text" required minlength="3" maxlength="50" name="createResturant.food" [(ngModel)]="createResturant.food" #food="ngModel"></td>
+              <p *ngIf="food.errors"> Please enter a food type</p>
+            </tr>
+            <tr *ngIf="!name.errors && !food.errors">
+              <td><button class="btn btn-primary" type="submit">Register</button></td>
+            </tr>
+          </table>
+          <button [routerLink]="['/']">Cancel</button>
+          </form>
+      </div>
+    </div>

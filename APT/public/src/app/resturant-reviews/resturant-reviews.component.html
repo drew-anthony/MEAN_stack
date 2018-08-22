@@ -1,0 +1,17 @@
+<button [routerLink]="['/newreview', id]">New Review</button>
+      <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Customer</th>
+              <th scope="col">Stars</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="rate" >
+            <tr *ngFor="let i of rate">
+              <th scope="row">{{ i.customer }}</th>
+              <td>{{ i.rating }}</td>
+              <td>{{ i.comment }}</td>
+            </tr>
+          </tbody>
+        </table>

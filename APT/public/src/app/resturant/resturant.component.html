@@ -1,0 +1,21 @@
+<div class="container">
+<table class="table table-bordered">
+  <thead class="thead-light">
+      
+    <tr>
+        <th scope="col">Resturant</th>
+        <th scope="col">Cuisine</th>
+        <th scope="col">Actions available</th>
+      </tr>
+   </thead>
+  <tbody *ngFor='let resturant of resturants'>
+    <tr>
+    <td scope="row">{{ resturant.name }}</td>
+    <td>{{ resturant.food }}</td>
+    <td><button [routerLink]="['resturant', resturant['_id']]" class="btn btn-secondary">Read reviews</button> | <button [routerLink]="['/edit', resturant['_id']]" class="btn btn-secondary">Update</button> | <button (click)="delResturant(resturant._id)" class="btn btn-secondary">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+<app-resturant *ngIf="showResturant" [getResturant]="showResturant"></app-resturant>

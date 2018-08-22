@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="col-8 border border-dark">
+        <h5>Edit a resturant</h5>
+        <hr>
+        <form (submit)="modResturant()">
+        <table>
+          <tr>
+            <td>Resturant Name:</td>
+            <td><input type="text" required minlength="3" maxlength="30" name="getResturant.name" [(ngModel)]="getResturant.name" #name="ngModel"></td>
+            <p *ngIf="name.errors"> Please enter a resturant name</p>
+          </tr>
+          <tr>
+            <td>Cuisine:</td>
+            <td><input type="text" required minlength="3" maxlength="50" name="getResturant.food" [(ngModel)]="getResturant.food" #food="ngModel"></td>
+            <p *ngIf="food.errors"> Please enter a food type</p>
+          </tr>
+          <tr *ngIf="!name.errors && !food.errors">
+            <td><button class="btn btn-primary" type="submit">Update Resturant</button></td>
+          </tr>
+        </table>
+        <button [routerLink]="['/']">Cancel</button>
+        </form>
+    </div>
+  </div>
