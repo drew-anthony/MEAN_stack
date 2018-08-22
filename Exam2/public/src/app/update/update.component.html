@@ -1,0 +1,32 @@
+<div class="col-4">
+    <form (submit)="modShelter()">
+      <h3>Update Pet</h3>
+      <hr class="my-4">
+      <label>Pet Name:
+        <input type="text" class="form-control" required minlength="3" maxlength="50" name="getShelter.name" [(ngModel)]="getShelter.name" #name='ngModel'>
+        <p *ngIf="name.errors"> Pet name field required</p >
+      </label>
+      <br>
+      <br>
+      <label>Pet Type:
+        <input type="text" class="form-control" required minlength="3" maxlength="50" name="getShelter.type" [(ngModel)]="getShelter.type" #type='ngModel'>
+        <p *ngIf="type.errors"> Pet name field required</p >
+      </label>
+      <br>
+      <br>
+      <label>Pet Description:
+        <input type="text" class="form-control" required minlength="3" maxlength="50" name="getShelter.description" [(ngModel)]="getShelter.description" #description='ngModel'>
+        <p *ngIf="description.errors"> Pet Description field required</p >
+      </label>
+      <label>Pet Skills (optional):
+        <input type="text" class="form-control" name="getShelter.skill1" [(ngModel)]="getShelter.skill1" #skill1='ngModel'>
+        <input type="text" class="form-control" name="getShelter.skill2" [(ngModel)]="getShelter.skill2" #skill2='ngModel'>
+        <input type="text" class="form-control" name="getShelter.skill3" [(ngModel)]="getShelter.skill3" #skill3='ngModel'>
+      </label>
+      <div *ngIf="!name.errors && !type.errors">
+      <button type="submit">Update Pet</button>
+    </div>
+      <hr class="my-4">
+      <button [routerLink]="['/']">Cancel</button>
+    </form>
+  </div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <h5>New Pet</h5>
+    <hr>
+    <form action="" (submit)="addShelter()">
+    <table>
+      <tr>
+        <td>Pet Name:</td>
+        <td><input type="text" required minlength="3" maxlength="30" name="createShelter.name" [(ngModel)]="createShelter.name" #name="ngModel"></td>
+        <p *ngIf="name.errors"> Pet Name Required</p>
+      </tr>
+      <tr>
+        <td>Pet Type:</td>
+        <td><input type="text" required minlength="3" maxlength="50" name="createShelter.type" [(ngModel)]="createShelter.type" #type="ngModel"></td>
+        <p *ngIf="type.errors"> Pet Type Required</p>
+      </tr>
+      <tr>
+        <td>Pet Description:</td>
+        <td><input type="text" required minlength="3" maxlength="30" name="createShelter.description" [(ngModel)]="createShelter.description" #description="ngModel"></td>
+        <p *ngIf="description.errors"> Pet Description Required</p>
+      </tr>
+      <tr>
+        <td>Pet Skills (optional)</td>
+        <td><input type="text" name="createShelter.skill1" [(ngModel)]="createShelter.skill1" #skill1="ngModel"></td>
+        <td><input type="text" name="createShelter.skill2" [(ngModel)]="createShelter.skill2" #skill2="ngModel"></td>
+        <td><input type="text" name="createShelter.skill3" [(ngModel)]="createShelter.skill3" #skill3="ngModel"></td>
+      </tr>
+      <tr *ngIf="!name.errors && !type.errors">
+        <td><button type="submit">Add Pet</button></td>
+      </tr>
+    </table>
+    <button [routerLink]="['/']">Cancel</button>
+    </form>
+</div>

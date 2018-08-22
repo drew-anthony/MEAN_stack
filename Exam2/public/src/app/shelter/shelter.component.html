@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+      <button type="link" [routerLink]="['/new']">New Pet</button>
+      <table class="table">
+          <thead class="thead-secondary">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>       
+            <tbody *ngFor="let shelter of shelters">
+              <tr>
+                <td>{{ shelter.name }}</td>
+                <td>{{ shelter.type }}</td>
+                <td><button [routerLink]="['shelter', shelter['_id']]">Details</button><button [routerLink]="['/edit', shelter['_id']]">Edit</button></td>
+              </tr>
+            </tbody>          
+        </table>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
